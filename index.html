@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+    <title>Frontend Mentor | E-commerce product page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <div class="nav-box">
+          <div class="nav-logo">
+            <img src="images/logo.svg" alt="logo-brand" class="brand-logo" />
+          </div>
+          <div class="navigations">
+            <div class="nav-item1">Collections</div>
+            <div class="nav-item2">Men</div>
+            <div class="nav-item3">Women</div>
+            <div class="nav-item4">About</div>
+            <div class="nav-item5">Contact</div>
+          </div>
+          <div class="nav-item6">
+            <button class="cart-show-hide" id="cart-btn">
+              <img src="images/icon-cart.svg" alt="cart" class="cart-image" />
+            </button>
+          </div>
+          <div class="nav-item7">
+            <img
+              src="images/image-avatar.png"
+              alt="avatar"
+              class="avatar-image"
+            />
+          </div>
+          <div class="small-counter hidden-small-counter"></div>
+          <div class="cart-background hidden-cart">
+            <div class="cart-text">Cart</div>
+            <div class="cart-line"></div>
+            <div class="empty-cart empty-cart-hidden">Your cart is empty</div>
+            <div class="cart-image-text hidden-cart-selection">
+              <div class="inner1">
+                <img
+                  src="images/image-product-1-thumbnail.jpg"
+                  class="thumbnail-image"
+                  alt="shoe"
+                />
+              </div>
+              <div class="inner2">Fall limited Edition Sneakers</div>
+              <div class="inner3">
+                <span class="item-cost">$125</span><span class="x">x</span
+                ><span class="item-count">0</span
+                ><span class="total-price">$0</span>
+              </div>
+              <div class="inner4">
+                <button class="checkout" id="checkout-btn">
+                  Checkout
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="catalogue">
+      <div class="shoes-part">
+        <img
+          src="images/image-product-1.jpg"
+          alt="shoe1"
+          class="product1-img"
+        />
+        <div class="shoe-images-display">
+          <div class="shoe-pictures">
+            <button class="shoe-box shoe-1 shoe-active" id="">
+              <img
+                src="images/image-product-1-thumbnail.jpg"
+                class="shoe-pic"
+                id=""
+              />
+            </button>
+            <button class="shoe-box shoe-2" id="">
+              <img
+                src="images/image-product-2-thumbnail.jpg"
+                class="shoe-pic"
+                id=""
+              />
+            </button>
+            <button class="shoe-box shoe-3" id="">
+              <img
+                src="images/image-product-3-thumbnail.jpg"
+                class="shoe-pic"
+                id=""
+              />
+            </button>
+            <button class="shoe-box shoe-4" id="">
+              <img
+                src="images/image-product-4-thumbnail.jpg"
+                class="shoe-pic"
+                id=""
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="pricing-part">
+        <div class="shoe-details">
+          <!-- <img src="images/image-product-1.jpg" alt="shoe1" class="product1-img"> -->
+          <p class="sneaker-company">SNEAKER COMPANY</p>
+          <p class="fall-limited">Fall Limited Edition Sneakers</p>
+          <p class="sneaker-discription">
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they’ll withstand everything
+            the weather can offer.
+          </p>
+          <p class="price">$125.00<span class="discount">50%</span></p>
+          <p class="discount-slash">$250.00</p>
+        </div>
+        <div class="add-remove-cart-btns">
+          <div class="minus-add-box">
+            <div class="minus-plus-background">
+              <button class="minus-mark" id="minus-btn">
+                <img
+                  src="images/icon-minus.svg"
+                  alt="minus"
+                  class="minus-image"
+                />
+              </button>
+              <div class="counter-value">0</div>
+              <button class="add-mark" id="plus-btn">
+                <img src="images/icon-plus.svg" alt="plus" class="plus-img" />
+              </button>
+            </div>
+            <button class="add-to-cart" id="addcart-btn">
+              <img src="images/icon-cart.svg" alt="cart img" class="cart-img" />
+              Add to cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+    <div class="overlay-box hide-overlay">
+      <button class="close-overlay">&times;</button>
+      <div class="shoes-part2">
+        <img
+          src="images/image-product-1.jpg"
+          alt="shoe1"
+          class="product1-img product1-img2"
+        />
+        <div class="shoe-images-display">
+          <div class="shoe-pictures">
+            <button class="shoe-box shoe-1 shoe-active" id="">
+              <img
+                src="images/image-product-1-thumbnail.jpg"
+                class="shoe-pic "
+                id=""
+              />
+            </button>
+            <button class="shoe-box shoe-2" id="">
+              <img
+                src="images/image-product-2-thumbnail.jpg"
+                class="shoe-pic "
+                id=""
+              />
+            </button>
+            <button class="shoe-box shoe-3" id="">
+              <img
+                src="images/image-product-3-thumbnail.jpg"
+                class="shoe-pic "
+                id=""
+              />
+            </button>
+            <button class="shoe-box shoe-4" id="">
+              <img
+                src="images/image-product-4-thumbnail.jpg"
+                class="shoe-pic "
+                id=""
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="overlay hide-overlay"></div>
+  </body>
+  <script src="main.js"></script>
+</html>
