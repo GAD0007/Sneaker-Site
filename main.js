@@ -1,15 +1,30 @@
 "use strict";
 // shoe price obect
 const shoePricesObj = {
-    shoePrice: 125,
+  shoePrice: 125,
+  shoePriceAllstar:350,
 }
+let pageswitcher = 1
 console.log(shoePricesObj.shoePrice)
+// Big images display
+const mainImgDisplay = document.querySelectorAll(".product1-img");
+const smallImgDisplay = document.querySelector(".product1-img2");
+
 const smallCounterCart = document.querySelector(".small-counter")
 
+// thumbnail clicks
 const thumbNail1 = document.querySelectorAll(".shoe-1");
 const thumbNail2 = document.querySelectorAll(".shoe-2");
 const thumbNail3 = document.querySelectorAll(".shoe-3");
 const thumbNail4 = document.querySelectorAll(".shoe-4");
+
+// thumbnail images
+const thumb1Display = document.querySelector(".thumb1");
+const thumb2Display = document.querySelector(".thumb2");
+const thumb3Display = document.querySelector(".thumb3");
+const thumb4Display = document.querySelector(".thumb4");
+
+
 
 // overlay
 const overlay = document.querySelector(".overlay");
@@ -20,17 +35,90 @@ const closeOverlay = document.querySelector(".close-overlay");
 const cartBtn = document.querySelector(".cart-show-hide");
 const cartBox = document.querySelector(".cart-background");
 const addToCartBtn = document.getElementById("addcart-btn");
+const addToCartBtnWomen = document.getElementById("addcart-btn-women");
+
 const emptyCart = document.querySelector(".empty-cart");
+const loadedCart = document.querySelector('.cart-image-text')
+const loadedCartWomen = document.querySelector('.hidden-cart-selection-women')
+
+// emptyCart.classList.remove('empty-cart-hidden')
+cartBox.classList.remove("hidden-cart");
 emptyCart.classList.remove('empty-cart-hidden')
+loadedCart.classList.add('hidden-cart-selection')
 
 // emptyCart.remove('empty-cart-hidden')
-const loadedCart = document.querySelector('.cart-image-text')
 
 // cart texts
 const counterOnCart = document.querySelector(".item-count")
+const counterOnCartWomen = document.querySelector(".item-count-women")
+
 const itemCostOnCart = document.querySelector(".item-cost")
 const counter = document.querySelector('.counter-value')
+const counterWomen = document.querySelector('.counter-value-women')
+
 const totalItemPrice = document.querySelector('.total-price')
+const totalItemPriceWomen = document.querySelector('.total-price-women')
+
+
+// 
+// document.querySelector('.catalogue2').classList.add('catalogue-switch')
+const btnWomenPage = document.querySelector('.nav-item3')
+const btnMenPage = document.querySelector('.nav-item2')
+
+const pageMen = document.querySelector('.men-section')
+const pageWomen = document.querySelector('.women-section')
+pageWomen.style.display = "none";
+
+
+// window.addEventListener("popstate",function () {
+    
+
+//     console.log('clicked back');}
+// )
+pageWomen.style.display = "block";
+
+btnWomenPage.addEventListener("click",function name(params) {
+  event.preventDefault();
+
+    console.log('women clicked');
+    pageWomen.style.display = "block";
+    // pageMen.classList.add('catalogue-switch')
+    pageMen.style.display = "none";
+    pageswitcher = 2
+    thumb1Display.src=`images/allstars-product-1-thumbnail.png`
+thumb2Display.src=`images/allstars-product-2-thumbnail.png`
+thumb3Display.src=`images/allstars-product-3-thumbnail.png`
+thumb4Display.src=`images/allstars-product-4-thumbnail.png`
+
+
+
+   
+    
+})
+
+btnMenPage.addEventListener("click",function name(params) {
+  event.preventDefault();
+
+    console.log('men clicked');
+    pageWomen.style.display = "none";
+
+    // pageMen.classList.add('catalogue-switch')
+    pageMen.style.display = "block";
+    pageswitcher = 1
+    thumb1Display.src=`images/image-product-1-thumbnail.jpg`
+    thumb2Display.src=`images/image-product-2-thumbnail.jpg`
+    thumb3Display.src=`images/image-product-3-thumbnail.jpg`
+    thumb4Display.src=`images/image-product-4-thumbnail.jpg`
+
+
+
+   
+    
+})
+
+
+        
+
 
 itemCostOnCart.textContent = `$${shoePricesObj.shoePrice}`
 
@@ -47,9 +135,6 @@ cartBtn.addEventListener("click", function () {
 }
 });
 
-// Big images display
-const mainImgDisplay = document.querySelector(".product1-img");
-const smallImgDisplay = document.querySelector(".product1-img2");
 
 // overlay open and close function
 const overlayOpen = function () {
@@ -67,12 +152,21 @@ console.log(imagesSelection[3]);
 //
 // product1-img
 
-// for (let i = 0; i < mainImgDisplay.length; i++)
+for (let i = 0; i < mainImgDisplay.length; i++)
 
-mainImgDisplay.addEventListener("click", function () {
-  mainImgDisplay.src = `images/image-product-${imagesSelection[0]}.jpg`;
-  smallImgDisplay.src = `images/image-product-${imagesSelection[0]}.jpg`;
-  overlayOpen();
+mainImgDisplay[i].addEventListener("click", function () {
+  if (pageswitcher === 1) {
+    mainImgDisplay[i].src = `images/image-product-${imagesSelection[0]}.jpg`;
+    smallImgDisplay.src = `images/image-product-${imagesSelection[0]}.jpg`;
+    overlayOpen();
+
+    
+  } else if (pageswitcher === 2){
+    mainImgDisplay[i].src = `images/allstars-product-${imagesSelection[0]}.png`;
+    smallImgDisplay.src = `images/allstars-product-${imagesSelection[0]}.png`;
+    overlayOpen();
+
+  }
 });
 
 // close overlay
@@ -92,8 +186,20 @@ for (let i = 0; i < thumbNail1.length; i++)
     // closeOverlay.classList.remove('hide-overlay')
 
     console.log("hmmm");
-    mainImgDisplay.src = `images/image-product-${imagesSelection[0]}.jpg`;
-    smallImgDisplay.src = `images/image-product-${imagesSelection[0]}.jpg`;
+    if (pageswitcher === 1) {
+      mainImgDisplay[i].src = `images/image-product-${imagesSelection[0]}.jpg`;
+      smallImgDisplay.src = `images/image-product-${imagesSelection[0]}.jpg`;
+      // overlayOpen();
+  
+      
+    } else if (pageswitcher === 2){
+      mainImgDisplay[i].src = `images/allstars-product-${imagesSelection[0]}.png`;
+      smallImgDisplay.src = `images/allstars-product-${imagesSelection[0]}.png`;
+      // overlayOpen();
+  
+    }
+    // mainImgDisplay.src = `images/image-product-${imagesSelection[0]}.jpg`;
+    // smallImgDisplay.src = `images/image-product-${imagesSelection[0]}.jpg`;
     // thumbNail1[i].classList.add("shoe-active");
     // thumbNail2[i].classList.remove("shoe-active");
     // thumbNail3[i].classList.remove("shoe-active");
@@ -202,6 +308,7 @@ for (let i = 0; i < thumbNail4.length; i++)
 
 //   counter.textContent = 2
 let clickCount1 = 0;
+let counterSeizeMen = 0;
 
   const minusBtn = document.getElementById('minus-btn')
   minusBtn.addEventListener('click',function () {
@@ -212,9 +319,13 @@ let clickCount1 = 0;
     smallCounterCart.textContent = clickCount1
 
     counterOnCart.textContent = clickCount1
-totalItemPrice.textContent = `$${shoePricesObj.shoePrice * clickCount1}`
+totalItemPrice.textContent = `$${shoePricesObj.shoePriceAllstar * clickCount2}`
 
+if (counterSeizeMen === 1) {
+  smallCounterCart.textContent = clickCount1 + clickCount2
 
+  
+}
 
     
    }else {
@@ -225,7 +336,13 @@ totalItemPrice.textContent = `$${shoePricesObj.shoePrice * clickCount1}`
     smallCounterCart.classList.add('hidden-small-counter')
 
     emptyCart.classList.remove('empty-cart-hidden')
+    if (counterSeizeMen === 1) {
+      smallCounterCart.textContent = clickCount1 + clickCount2
+    
+      
+    }
     loadedCart.classList.add('hidden-cart-selection')
+   
    }
     
   })
@@ -236,11 +353,15 @@ totalItemPrice.textContent = `$${shoePricesObj.shoePrice * clickCount1}`
         clickCount1++
        console.log(clickCount1);
     counter.textContent = clickCount1
-    smallCounterCart.textContent = clickCount1
-
+    
     counterOnCart.textContent = clickCount1
-totalItemPrice.textContent = `$${shoePricesObj.shoePrice * clickCount1}`
-
+    totalItemPrice.textContent = `$${shoePricesObj.shoePrice * clickCount1}`
+    
+    if (counterSeizeMen === 1) {
+      smallCounterCart.textContent = clickCount1 + clickCount2
+    
+      
+    }
 
     
    }
@@ -248,24 +369,122 @@ totalItemPrice.textContent = `$${shoePricesObj.shoePrice * clickCount1}`
 
     
   })
+let clickCount2 = 0;
+let counterSeizeWomen = 0;
+
+
+  const minusBtnWomen = document.getElementById('minus-btn-women')
+  minusBtnWomen.addEventListener('click',function () {
+    console.log('minus');
+   if (clickCount2 > 1) {
+    clickCount2--
+    counterWomen.textContent = clickCount2
+    // smallCounterCart.textContent = clickCount1
+
+    counterOnCartWomen.textContent = clickCount2
+totalItemPriceWomen.textContent = `$${shoePricesObj.shoePrice * clickCount1}`
+if (counterSeizeWomen === 1) {
+  smallCounterCart.textContent = clickCount1 + clickCount2
+  
+}
+
+
+    
+   }else {
+    console.log('switch up');
+    clickCount2 = 0
+    counterWomen.textContent = clickCount2
+    counterOnCartWomen.textContent = clickCount2
+    emptyCart.classList.remove('empty-cart-hidden')
+
+    if (counterSeizeWomen === 1) {
+    counterSeizeWomen = 0
+
+      smallCounterCart.textContent = clickCount1 + clickCount2
+      
+    }
+    // smallCounterCart.classList.add('hidden-small-counter')
+
+    // emptyCart.classList.remove('empty-cart-hidden')
+    // loadedCartWomen.classList.add('hidden-cart-selection')
+    loadedCartWomen.style.display = "none"
+   
+
+   }
+    
+  })
+  const PlusBtnWomen = document.getElementById('plus-btn-women')
+  PlusBtnWomen.addEventListener('click',function () {
+      console.log('plus');
+      if (clickCount2 < 10) {
+        clickCount2++
+       console.log(clickCount2);
+    counterWomen.textContent = clickCount2
+    // smallCounterCart.textContent = clickCount1
+
+    counterOnCartWomen.textContent = clickCount2
+totalItemPriceWomen.textContent = `$${shoePricesObj.shoePriceAllstar * clickCount2}`
+console.log(counterSeizeWomen);
+if (counterSeizeWomen === 1) {
+  smallCounterCart.textContent = clickCount1 + clickCount2
+
+  
+}
+
+
+}
+
+
+    
+  })
   
   addToCartBtn.addEventListener('click',function () {
-    clickCount = 1
+    // clickCount = 1
+    counterSeizeMen = 1
 
     if (clickCount1 < 1) {
-        console.log('empty');
+        console.log('emptymen');
         cartBox.classList.remove("hidden-cart");
-        emptyCart.classList.remove('empty-cart-hidden')
+        // emptyCart.classList.remove('empty-cart-hidden')
         loadedCart.classList.add('hidden-cart-selection')
         
     } else {
-        console.log('loaded');
-        smallCounterCart.textContent = clickCount1
+        console.log('loadedmen');
+        smallCounterCart.textContent = clickCount1 + clickCount2
         smallCounterCart.classList.remove('hidden-small-counter')
 
         cartBox.classList.remove("hidden-cart");
         emptyCart.classList.add('empty-cart-hidden')
         loadedCart.classList.remove('hidden-cart-selection')
+
+        
+    }
+
+  })
+  addToCartBtnWomen.addEventListener('click',function () {
+    // clickCount2 = 1
+    counterSeizeWomen = 1
+    console.log(counterSeizeWomen);
+
+    if (clickCount2 < 1) {
+        console.log('emptyWomen');
+        cartBox.classList.remove("hidden-cart");
+        // emptyCart.classList.remove('empty-cart-hidden')
+        // loadedCartWomen.classList.add('hidden-cart-selection-women')
+        
+    } else {
+        console.log('loadedwomen');
+        // smallCounterCart.textContent = clickCount2
+        // smallCounterCart.classList.remove('hidden-small-counter')
+
+        cartBox.classList.remove("hidden-cart");
+        emptyCart.classList.add('empty-cart-hidden')
+        // loadedCartWomen.classList.remove('hidden-cart-selection-women')
+        loadedCartWomen.style.display = "flex"
+        smallCounterCart.textContent = clickCount1 + clickCount2
+        smallCounterCart.classList.remove('hidden-small-counter')
+
+
 
         
     }
