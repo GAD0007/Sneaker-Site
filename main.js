@@ -1,15 +1,26 @@
 "use strict";
-// shoe price obect
+let clickCount = 0;
+
+let clickCount2 = 0;
+let counterSeizeWomen = 0;
+let clickCount1 = 0;
+let counterSeizeMen = 0;
+let counterSeizeMen2 = 0
+let counterSeizeWomen2 = 0
+
+// shoe prices obect
 const shoePricesObj = {
   shoePrice: 125,
   shoePriceAllstar:350,
-}
+} 
+// to swtich pages and still make functionality work
 let pageswitcher = 1
-console.log(shoePricesObj.shoePrice)
-// Big images display
+
+// Big images display on the pages
 const mainImgDisplay = document.querySelectorAll(".product1-img");
 const smallImgDisplay = document.querySelector(".product1-img2");
 
+// counter on the cart image
 const smallCounterCart = document.querySelector(".small-counter")
 
 // thumbnail clicks
@@ -31,7 +42,7 @@ const overlay = document.querySelector(".overlay");
 const overlayDisplay = document.querySelector(".overlay-box");
 const closeOverlay = document.querySelector(".close-overlay");
 
-// cart
+// cart 
 const cartBtn = document.querySelector(".cart-show-hide");
 const cartBox = document.querySelector(".cart-background");
 const addToCartBtn = document.getElementById("addcart-btn");
@@ -42,11 +53,12 @@ const loadedCart = document.querySelector('.cart-image-text')
 const loadedCartWomen = document.querySelector('.hidden-cart-selection-women')
 
 // emptyCart.classList.remove('empty-cart-hidden')
-cartBox.classList.remove("hidden-cart");
+cartBox.classList.add("hidden-cart");
 emptyCart.classList.remove('empty-cart-hidden')
 loadedCart.classList.add('hidden-cart-selection')
 
 // emptyCart.remove('empty-cart-hidden')
+
 
 // cart texts
 const counterOnCart = document.querySelector(".item-count")
@@ -62,9 +74,11 @@ const totalItemPriceWomen = document.querySelector('.total-price-women')
 
 // 
 // document.querySelector('.catalogue2').classList.add('catalogue-switch')
+// btns for the nav bar
 const btnWomenPage = document.querySelector('.nav-item3')
 const btnMenPage = document.querySelector('.nav-item2')
 
+// men and women pages
 const pageMen = document.querySelector('.men-section')
 const pageWomen = document.querySelector('.women-section')
 pageWomen.style.display = "none";
@@ -75,7 +89,7 @@ pageWomen.style.display = "none";
 
 //     console.log('clicked back');}
 // )
-pageWomen.style.display = "block";
+// pageWomen.style.display = "block";
 
 btnWomenPage.addEventListener("click",function name(params) {
   event.preventDefault();
@@ -124,7 +138,6 @@ itemCostOnCart.textContent = `$${shoePricesObj.shoePrice}`
 
 
 
-let clickCount = 0;
 cartBtn.addEventListener("click", function () {
     clickCount++;
 
@@ -307,8 +320,8 @@ for (let i = 0; i < thumbNail4.length; i++)
   });
 
 //   counter.textContent = 2
-let clickCount1 = 0;
-let counterSeizeMen = 0;
+
+// button for men pages, plus and minus
 
   const minusBtn = document.getElementById('minus-btn')
   minusBtn.addEventListener('click',function () {
@@ -316,7 +329,7 @@ let counterSeizeMen = 0;
    if (clickCount1 > 1) {
     clickCount1--
     counter.textContent = clickCount1
-    smallCounterCart.textContent = clickCount1
+    // smallCounterCart.textContent = clickCount1
 
     counterOnCart.textContent = clickCount1
 totalItemPrice.textContent = `$${shoePricesObj.shoePriceAllstar * clickCount2}`
@@ -333,17 +346,27 @@ if (counterSeizeMen === 1) {
     clickCount1 = 0
     counter.textContent = clickCount1
     counterOnCart.textContent = clickCount1
-    smallCounterCart.classList.add('hidden-small-counter')
+    // smallCounterCart.classList.add('hidden-small-counter')
 
+   if (clickCount1 === 0 && clickCount2 === 0) {
     emptyCart.classList.remove('empty-cart-hidden')
-    if (counterSeizeMen === 1) {
+    
+   }
+   
+    if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
       smallCounterCart.textContent = clickCount1 + clickCount2
+    
+      
+    }else if (counterSeizeWomen2 === 0 & counterSeizeMen2 === 1) {
+      smallCounterCart.textContent = clickCount1
     
       
     }
     loadedCart.classList.add('hidden-cart-selection')
    
    }
+   counterSeizeMen2 = 0
+
     
   })
   const PlusBtn = document.getElementById('plus-btn')
@@ -357,8 +380,13 @@ if (counterSeizeMen === 1) {
     counterOnCart.textContent = clickCount1
     totalItemPrice.textContent = `$${shoePricesObj.shoePrice * clickCount1}`
     
-    if (counterSeizeMen === 1) {
+   
+    if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
       smallCounterCart.textContent = clickCount1 + clickCount2
+    
+      
+    }else if (counterSeizeWomen2 === 0 & counterSeizeMen2 === 1) {
+      smallCounterCart.textContent = clickCount1
     
       
     }
@@ -369,8 +397,9 @@ if (counterSeizeMen === 1) {
 
     
   })
-let clickCount2 = 0;
-let counterSeizeWomen = 0;
+
+// button for women pages, plus and minus
+
 
 
   const minusBtnWomen = document.getElementById('minus-btn-women')
@@ -383,11 +412,16 @@ let counterSeizeWomen = 0;
 
     counterOnCartWomen.textContent = clickCount2
 totalItemPriceWomen.textContent = `$${shoePricesObj.shoePrice * clickCount1}`
-if (counterSeizeWomen === 1) {
+
+if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
   smallCounterCart.textContent = clickCount1 + clickCount2
+
+  
+}else if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 0) {
+  smallCounterCart.textContent = clickCount2
+
   
 }
-
 
     
    }else {
@@ -395,7 +429,11 @@ if (counterSeizeWomen === 1) {
     clickCount2 = 0
     counterWomen.textContent = clickCount2
     counterOnCartWomen.textContent = clickCount2
-    emptyCart.classList.remove('empty-cart-hidden')
+    // emptyCart.classList.remove('empty-cart-hidden')
+    if (clickCount1 === 0 && clickCount2 === 0) {
+      emptyCart.classList.remove('empty-cart-hidden')
+      
+     }
 
     if (counterSeizeWomen === 1) {
     counterSeizeWomen = 0
@@ -408,6 +446,8 @@ if (counterSeizeWomen === 1) {
     // emptyCart.classList.remove('empty-cart-hidden')
     // loadedCartWomen.classList.add('hidden-cart-selection')
     loadedCartWomen.style.display = "none"
+   counterSeizeWomen2 = 0
+
    
 
    }
@@ -425,8 +465,12 @@ if (counterSeizeWomen === 1) {
     counterOnCartWomen.textContent = clickCount2
 totalItemPriceWomen.textContent = `$${shoePricesObj.shoePriceAllstar * clickCount2}`
 console.log(counterSeizeWomen);
-if (counterSeizeWomen === 1) {
+if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
   smallCounterCart.textContent = clickCount1 + clickCount2
+
+  
+}else if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 0) {
+  smallCounterCart.textContent = clickCount2
 
   
 }
@@ -438,9 +482,12 @@ if (counterSeizeWomen === 1) {
     
   })
   
+  // add to cart btns for women and men pages
   addToCartBtn.addEventListener('click',function () {
     // clickCount = 1
     counterSeizeMen = 1
+    counterSeizeMen2 = 1
+
 
     if (clickCount1 < 1) {
         console.log('emptymen');
@@ -450,7 +497,16 @@ if (counterSeizeWomen === 1) {
         
     } else {
         console.log('loadedmen');
-        smallCounterCart.textContent = clickCount1 + clickCount2
+    clickCount = 1;
+
+        if (counterSeizeWomen2 === 1) {
+          smallCounterCart.textContent = clickCount1 + clickCount2
+          
+          
+        } else {
+          smallCounterCart.textContent = clickCount1
+          
+        }
         smallCounterCart.classList.remove('hidden-small-counter')
 
         cartBox.classList.remove("hidden-cart");
@@ -462,8 +518,11 @@ if (counterSeizeWomen === 1) {
 
   })
   addToCartBtnWomen.addEventListener('click',function () {
+
     // clickCount2 = 1
     counterSeizeWomen = 1
+    counterSeizeWomen2 = 1
+
     console.log(counterSeizeWomen);
 
     if (clickCount2 < 1) {
@@ -474,6 +533,8 @@ if (counterSeizeWomen === 1) {
         
     } else {
         console.log('loadedwomen');
+    clickCount = 1;
+
         // smallCounterCart.textContent = clickCount2
         // smallCounterCart.classList.remove('hidden-small-counter')
 
@@ -481,7 +542,15 @@ if (counterSeizeWomen === 1) {
         emptyCart.classList.add('empty-cart-hidden')
         // loadedCartWomen.classList.remove('hidden-cart-selection-women')
         loadedCartWomen.style.display = "flex"
-        smallCounterCart.textContent = clickCount1 + clickCount2
+        if (counterSeizeMen2 === 1) {
+          
+          smallCounterCart.textContent = clickCount1 + clickCount2
+          
+        } else {
+          smallCounterCart.textContent = clickCount2
+          
+        }
+        // smallCounterCart.textContent = clickCount1 + clickCount2
         smallCounterCart.classList.remove('hidden-small-counter')
 
 

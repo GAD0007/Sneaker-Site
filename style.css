@@ -1,5 +1,17 @@
 body{
     position: relative;
+    /* padding: 2rem 3rem; */
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    /* margin-bottom: 0px; */
+
+    /* height: 100%; */
+    /* background-color: black; */
+}
+.body2{
+    position: relative;
     padding: 2rem 3rem;
     max-width: 1400px;
     margin-left: auto;
@@ -23,6 +35,8 @@ body{
     align-items: center;
     border-bottom: 1px solid rgb(206, 203, 203);
     padding-bottom: 15px;
+    padding-top: 15px;
+
 }
 .navigations{
     position: absolute;
@@ -36,7 +50,7 @@ body{
 }
 .nav-logo{
     position: absolute;
-    left: 2%;
+    left: 5%;
 
 }
 .no-style-btn{
@@ -70,8 +84,8 @@ body{
 }
 .nav-item6{
     position: absolute;
-    left: 88%;
-    top: 20%;
+    left: 86%;
+    top: 30%;
 
 }
 .hidden-small-counter{
@@ -86,8 +100,8 @@ body{
     border-radius: 5px;
     width: fit-content;
     height: 15px;
-    top: 0px;
-    left: 91.5%;
+    top: 7px;
+    left: 87.5%;
     color: white;
 }
 .cart-show-hide{
@@ -195,18 +209,56 @@ div.inner3 span {
 }
 .nav-item7{
     position: absolute;
-    left: 95%;
+    left: 92%;
 
 }
 .avatar-image{
     width: 40px;
 }
+.aside-box{
+    /* background-color: red; */
+    /* align-self: center; */
+    margin-top: 60px;
+    height: 500px;
+    /* width: 350px; */
+
+
+    /* background-image: ; */
+    /* background-image: url("images/allstars-product-3.png"); */
+    /* background-size:cover; */
+
+    /* background-size:contain; */
+    /* background-repeat: no-repeat; */
+}
+.new-img{
+    height: 150px;
+    width: 200px;
+
+
+
+}
+.aside-bar{
+    width: 200px;
+    /* justify-self:end; */
+    /* margin-left: auto; */
+
+
+   
+
+
+}
+.aside-bar-2{
+    display: none;
+     
+  
+  
+  }
 .catalogue{
     display:flex;
     padding: 2rem 1rem ;
     margin-right: auto;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 20px;
     /* max-width: 1400px; */
 }
 .catalogue2{
@@ -214,7 +266,7 @@ div.inner3 span {
     padding: 2rem 1rem ;
     margin-right: auto;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 20px;
     /* max-width: 1400px; */
 }
 .catalogue-switch{
@@ -380,6 +432,7 @@ background-color: hsl(26, 100%, 55%) ;
 .pricing-part{
     width: 320px;
     margin-left: 5%;
+    margin-right: 5%;
     /* margin-left: auto; */
 
 }
@@ -395,7 +448,7 @@ background-color: hsl(26, 100%, 55%) ;
 nav{
     position: sticky;
     z-index: 10000;
-    top: 10px;
+    top: 0px;
     background-color: orange;
 }
 .counter-value-women{
@@ -488,17 +541,125 @@ nav{
     backdrop-filter: blur(3px);
     z-index: 5;
   }
+  @media screen and (max-width: 900px) {
+    .aside-bar{
+        display: none;
+         
+      
+      
+      }
+      .aside-bar-2{
+          display: flex;
+          /* justify-content: center;
+          /* align-self: center;
+           */
+           /* align-items: center;
+           justify-self: center;
+           justify-items: center;
+           margin-left: auto; */ 
+           justify-content: center;
+
+
+           
+        
+        
+        }
+  }
+  @media screen and (max-width: 850px) {
+   
+   
+        .aside-box{
+            justify-content: center;
+            height: 300px;
+            margin-top: 30px;
+        }
+  }
+  @media screen and (max-width: 651px) {
+    .navigations{
+        display: none;
+    }
+    .nav-item6{
+        position: absolute;
+        left: 78%;
+        top: 30%;
+    
+    }
+    .nav-item7{
+        position: absolute;
+        left: 88%;
+        /* top: 30%; */
+    
+    }
+     .small-counter{
+        position: absolute;
+        background-color: red;
+        width: 15px;
+        height: 15px;
+        top: 7px;
+        left: 80.5%;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .body2{
+        position: relative;
+        padding: 0rem 0rem !important;
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+        /* margin-bottom: 0px; */
+    
+        /* height: 100%; */
+        /* background-color: black; */
+    }
+
+    .catalogue{
+        display: block !important;
+    }
+    .catalogue2{
+        display: block !important;
+    }
+    .shoes-part{
+        width: 100% !important;
+    }
+    .pricing-part{
+        width: 100% !important;
+        margin-left: 5%;
+        margin-top: 10px;
+        /* margin-left: auto; */
+    
+    }
+  }
   @media screen and (max-width: 750px) {
+    /* .new-img{
+        height: 150px;
+        width: 120px !important; 
+    
+    
+    
+    } */
+    .body2{
+        position: relative;
+        padding: 0rem 0rem !important;
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+        /* margin-bottom: 0px; */
+    
+        /* height: 100%; */
+        /* background-color: black; */
+    }
+ 
+    
 
   .pricing-part{
     width: 250px;
-    margin-left: 5%;
+    margin-left: 0%;
     /* margin-left: auto; */
 
 }
 .shoes-part{
     width: 250px;
-    height: 400px; 
+    height: 100%; 
 
 }
 .fall-limited{
@@ -511,15 +672,80 @@ nav{
 
 }
   }
+@media screen and (max-width: 430px) {
+    .new-img{
+        height: 110px !important;
+        width: 110px !important;
+    
+    
+        margin-right: 10px;
+        margin-left: 10px;
+    
+    }
+    .nav-item6{
+        position: absolute;
+        left: 72%;
+        top: 30%;
+    
+    }
+    .nav-item7{
+        position: absolute;
+        left: 82%;
+        /* top: 30%; */
+    
+    }
+    .small-counter{
+        position: absolute;
+        background-color: red;
+        width: 15px;
+        height: 15px;
+        top: 7px;
+        left: 75.5%;
+    }
+}
+@media screen and (max-width: 950px) {
+    .new-img{
+        height: 150px;
+        width: 150px;
+    
+    
+        margin-right: 10px;
+        margin-left: 10px;
+    
+    }
+
+    .aside-bar{
+        width: 150px;
+        /* justify-self:end; */
+        /* margin-left: auto; */
+    
+    
+       
+    
+    
+    }
+ 
+}
 @media screen and (max-width: 980px) {
-    body{
+    /* .body2{
         padding: 2rem 2rem;
         max-width: 1400px;
         margin-left: auto;
         margin-right: auto;
+    } */
+    .body2{
+        position: relative;
+        padding: 2rem 2rem;
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+        /* margin-bottom: 0px; */
+    
+        /* height: 100%; */
+        /* background-color: black; */
     }
     .navigations{
-        left: 30%;
+        left: 29%;
     }
     
     .catalogue{
@@ -541,12 +767,12 @@ nav{
         /* height: 600px;  */
     
     }
-    .small-counter{
+    /* .small-counter{
         position: absolute;
         background-color: red;
         width: 15px;
         height: 15px;
         top: 0px;
         left: 92%;
-    }
+    } */
 }
