@@ -22,6 +22,9 @@ const smallImgDisplay = document.querySelector(".product1-img2");
 
 // counter on the cart image
 const smallCounterCart = document.querySelector(".small-counter")
+document.querySelector(".inner44").style.display = "none"
+const checkOut = document.querySelector(".inner44");
+
 
 // thumbnail clicks
 const thumbNail1 = document.querySelectorAll(".shoe-1");
@@ -396,12 +399,17 @@ btnMenPage.addEventListener("click",function name(params) {
     
 })
 // let navClick = 0
+let opened = false;
 const navbtn = document.querySelector(".nav-collapse");
 navbtn.addEventListener("click",function () {
   // console.log('hmmmmddmdmdmdm');
   // navClick++
   // if (navClick === 1) {
     document.querySelector('.hidden-small-bar').style.display = "block" 
+    clickCount = 0;
+    cartBox.classList.add("hidden-cart");
+    opened = true
+    console.log(opened)
 
   // }
 
@@ -535,6 +543,7 @@ closeOverlay.addEventListener("click", function () {
 // thumbnail button 1
 for (let i = 0; i < thumbNail1.length; i++)
   thumbNail1[i].addEventListener("click", function name(params) {
+    nextCount = 0
     // closeOverlay.classList.remove('hide-overlay')
     
     console.log("hmmm");
@@ -574,12 +583,17 @@ for (let i = 0; i < thumbNail1.length; i++)
         element.classList.remove("shoe-active");
         
     });
-    overlayOpen();
+    if (window.innerWidth > 650) {
+      overlayOpen();
+      
+    }
   });
 
 // thumbnail button 2
 for (let i = 0; i < thumbNail2.length; i++)
   thumbNail2[i].addEventListener("click", function name(params) {
+    nextCount = 1
+
     console.log("hmmm2");
     if (pageswitcher === 1) {
       mainImgDisplay[i].src = `images/image-product-${imagesSelection[1]}.jpg`;
@@ -610,12 +624,17 @@ for (let i = 0; i < thumbNail2.length; i++)
         element.classList.remove("shoe-active");
         
     });
-    overlayOpen();
+    if (window.innerWidth > 650) {
+      overlayOpen();
+      
+    }
   });
 
 // thumbnail button 3
 for (let i = 0; i < thumbNail3.length; i++)
   thumbNail3[i].addEventListener("click", function name(params) {
+    nextCount = 2
+
     if (pageswitcher === 1) {
       mainImgDisplay[i].src = `images/image-product-${imagesSelection[2]}.jpg`;
       smallImgDisplay.src = `images/image-product-${imagesSelection[2]}.jpg`;
@@ -645,11 +664,16 @@ for (let i = 0; i < thumbNail3.length; i++)
         element.classList.remove("shoe-active");
         
     });
-    overlayOpen();
+    if (window.innerWidth > 650) {
+      overlayOpen();
+      
+    }
   });
 // thumbnail button 4
 for (let i = 0; i < thumbNail4.length; i++)
   thumbNail4[i].addEventListener("click", function name(params) {
+    nextCount = 3
+
     if (pageswitcher === 1) {
       mainImgDisplay[i].src = `images/image-product-${imagesSelection[3]}.jpg`;
       smallImgDisplay.src = `images/image-product-${imagesSelection[3]}.jpg`;
@@ -678,7 +702,10 @@ for (let i = 0; i < thumbNail4.length; i++)
         element.classList.add("shoe-active");
         
     });
-    overlayOpen();
+    if (window.innerWidth > 650) {
+      overlayOpen();
+      
+    }
   });
 
 //   counter.textContent = 2
@@ -725,6 +752,8 @@ if (counterSeizeMen === 1) {
       
     }
     loadedCart.classList.add('hidden-cart-selection')
+    checkOut.style.display = "none"
+
    
    }
    counterSeizeMen2 = 0
@@ -808,6 +837,8 @@ if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
     // emptyCart.classList.remove('empty-cart-hidden')
     // loadedCartWomen.classList.add('hidden-cart-selection')
     loadedCartWomen.style.display = "none"
+    checkOut.style.display = "none"
+
    counterSeizeWomen2 = 0
 
    
@@ -861,6 +892,7 @@ if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
         console.log('loadedmen');
     clickCount = 1;
 
+
         if (counterSeizeWomen2 === 1) {
           smallCounterCart.textContent = clickCount1 + clickCount2
           
@@ -874,6 +906,8 @@ if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
         cartBox.classList.remove("hidden-cart");
         emptyCart.classList.add('empty-cart-hidden')
         loadedCart.classList.remove('hidden-cart-selection')
+        checkOut.style.display = "flex"
+
 
         
     }
@@ -904,6 +938,8 @@ if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
         emptyCart.classList.add('empty-cart-hidden')
         // loadedCartWomen.classList.remove('hidden-cart-selection-women')
         loadedCartWomen.style.display = "flex"
+        checkOut.style.display = "flex"
+
         if (counterSeizeMen2 === 1) {
           
           smallCounterCart.textContent = clickCount1 + clickCount2
@@ -921,3 +957,19 @@ if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
     }
 
   })
+  if (opened = true) {
+  document.querySelector(".body2").addEventListener("click",function name(params) {
+      console.log('wide');
+    document.querySelector('.overlay-small-screen').style.display = "none" 
+      
+    })
+
+    // document.querySelector(".nav-container").addEventListener("click",function name(params) {
+    //   console.log('wide');
+    // document.querySelector('.overlay-small-screen').style.display = "none" 
+      
+    // })
+
+
+    
+  }
