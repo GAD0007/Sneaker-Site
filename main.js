@@ -108,12 +108,12 @@ nextBtn[i].addEventListener("click", function () {
     nextCount ++
   if (nextCount === 1) {
     if (pageswitcher === 1) {
+      
+      mainImgDisplay[i].src = `images/allstars-product-${imagesSelection[1]}.png`;
+      
+    } else if (pageswitcher === 2){
       mainImgDisplay[i].src = `images/image-product-${imagesSelection[1]}.jpg`;
-
-    
-  } else if (pageswitcher === 2){
-    mainImgDisplay[i].src = `images/allstars-product-${imagesSelection[1]}.png`;
-    
+      
   }
     thumbNail1.forEach((element) => {
       element.classList.remove("shoe-active");
@@ -135,11 +135,11 @@ nextBtn[i].addEventListener("click", function () {
   }
   if (nextCount === 2) {
     if (pageswitcher === 1) {
-      mainImgDisplay[i].src = `images/image-product-${imagesSelection[2]}.jpg`;
-
-    
-  } else if (pageswitcher === 2){
-    mainImgDisplay[i].src = `images/allstars-product-${imagesSelection[2]}.png`;
+      
+      mainImgDisplay[i].src = `images/allstars-product-${imagesSelection[2]}.png`;
+      
+    } else if (pageswitcher === 2){
+    mainImgDisplay[i].src = `images/image-product-${imagesSelection[2]}.jpg`;
     
   }
     thumbNail1.forEach((element) => {
@@ -163,12 +163,12 @@ nextBtn[i].addEventListener("click", function () {
   if (nextCount === 3) {
     // nextCount = nextCount
     if (pageswitcher === 1) {
+      mainImgDisplay[i].src = `images/allstars-product-${imagesSelection[3]}.png`;
+      
+      
+    } else if (pageswitcher === 2){
+      
       mainImgDisplay[i].src = `images/image-product-${imagesSelection[3]}.jpg`;
-
-    
-  } else if (pageswitcher === 2){
-    mainImgDisplay[i].src = `images/allstars-product-${imagesSelection[3]}.png`;
-    
   }
     thumbNail1.forEach((element) => {
       element.classList.remove("shoe-active");
@@ -199,12 +199,12 @@ prevBtn[i].addEventListener("click", function () {
   if (nextCount === 1) {
      nextCount = 0
      if (pageswitcher === 1) {
-      mainImgDisplay[i].src = `images/image-product-${imagesSelection[0]}.jpg`;
-
-    
-  } else if (pageswitcher === 2){
-    mainImgDisplay[i].src = `images/allstars-product-${imagesSelection[0]}.png`;
-    
+       
+       mainImgDisplay[i].src = `images/allstars-product-${imagesSelection[0]}.png`;
+       
+      } else if (pageswitcher === 2){
+        
+        mainImgDisplay[i].src = `images/image-product-${imagesSelection[0]}.jpg`;
   }
     thumbNail1.forEach((element) => {
       element.classList.add("shoe-active");
@@ -227,12 +227,12 @@ prevBtn[i].addEventListener("click", function () {
   if (nextCount === 2) {
     nextCount = 1
     if (pageswitcher === 1) {
+      
+      mainImgDisplay[i].src = `images/allstars-product-${imagesSelection[1]}.png`;
+      
+    } else if (pageswitcher === 2){
+      
       mainImgDisplay[i].src = `images/image-product-${imagesSelection[1]}.jpg`;
-
-    
-  } else if (pageswitcher === 2){
-    mainImgDisplay[i].src = `images/allstars-product-${imagesSelection[1]}.png`;
-    
   }
     thumbNail1.forEach((element) => {
       element.classList.remove("shoe-active");
@@ -255,12 +255,12 @@ prevBtn[i].addEventListener("click", function () {
   if (nextCount === 3) {
     nextCount = 2
     if (pageswitcher === 1) {
+      mainImgDisplay[i].src = `images/allstars-product-${imagesSelection[2]}.png`;
+      
+      
+    } else if (pageswitcher === 2){
+      
       mainImgDisplay[i].src = `images/image-product-${imagesSelection[2]}.jpg`;
-
-    
-  } else if (pageswitcher === 2){
-    mainImgDisplay[i].src = `images/allstars-product-${imagesSelection[2]}.png`;
-    
   }
     thumbNail1.forEach((element) => {
       element.classList.remove("shoe-active");
@@ -560,14 +560,14 @@ for (let i = 0; i < thumbNail1.length; i++)
     
       
       if (pageswitcher === 1) {
-        mainImgDisplay[i].src = `images/image-product-${imagesSelection[0]}.jpg`;
-        smallImgDisplay.src = `images/image-product-${imagesSelection[0]}.jpg`;
-      // overlayOpen();
-      
-      
-    } else if (pageswitcher === 2){
-      mainImgDisplay[i].src = `images/allstars-product-${imagesSelection[0]}.png`;
-      smallImgDisplay.src = `images/allstars-product-${imagesSelection[0]}.png`;
+        // overlayOpen();
+        mainImgDisplay[i].src = `images/allstars-product-${imagesSelection[0]}.png`;
+        smallImgDisplay.src = `images/allstars-product-${imagesSelection[0]}.png`;
+        
+        
+      } else if (pageswitcher === 2){
+      mainImgDisplay[i].src = `images/image-product-${imagesSelection[0]}.jpg`;
+      smallImgDisplay.src = `images/image-product-${imagesSelection[0]}.jpg`;
       // overlayOpen();
       
     }
@@ -606,13 +606,13 @@ for (let i = 0; i < thumbNail2.length; i++)
 
     console.log("hmmm2");
     if (pageswitcher === 1) {
-      mainImgDisplay[i].src = `images/image-product-${imagesSelection[1]}.jpg`;
-      smallImgDisplay.src = `images/image-product-${imagesSelection[1]}.jpg`;
+      mainImgDisplay[i].src = `images/allstars-product-${imagesSelection[1]}.png`;
+      smallImgDisplay.src = `images/allstars-product-${imagesSelection[1]}.png`;
       
     }else{
-       mainImgDisplay[i].src = `images/allstars-product-${imagesSelection[1]}.png`;
-      smallImgDisplay.src = `images/allstars-product-${imagesSelection[1]}.png`;
-
+      
+      mainImgDisplay[i].src = `images/image-product-${imagesSelection[1]}.jpg`;
+      smallImgDisplay.src = `images/image-product-${imagesSelection[1]}.jpg`;
     }
     // thumbNail1[i].classList.remove("shoe-active");
     // thumbNail2[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i].classList.add("shoe-active");
@@ -646,12 +646,12 @@ for (let i = 0; i < thumbNail3.length; i++)
     nextCount = 2
 
     if (pageswitcher === 1) {
+      
+      mainImgDisplay[i].src = `images/allstars-product-${imagesSelection[2]}.png`;
+      smallImgDisplay.src = `images/allstars-product-${imagesSelection[2]}.png`;
+    }else{
       mainImgDisplay[i].src = `images/image-product-${imagesSelection[2]}.jpg`;
       smallImgDisplay.src = `images/image-product-${imagesSelection[2]}.jpg`;
-      
-    }else{
-       mainImgDisplay[i].src = `images/allstars-product-${imagesSelection[2]}.png`;
-      smallImgDisplay.src = `images/allstars-product-${imagesSelection[2]}.png`;
 
     }
     // thumbNail1[i].classList.remove("shoe-active");
@@ -685,12 +685,12 @@ for (let i = 0; i < thumbNail4.length; i++)
     nextCount = 3
 
     if (pageswitcher === 1) {
-      mainImgDisplay[i].src = `images/image-product-${imagesSelection[3]}.jpg`;
-      smallImgDisplay.src = `images/image-product-${imagesSelection[3]}.jpg`;
+      mainImgDisplay[i].src = `images/allstars-product-${imagesSelection[3]}.png`;
+      smallImgDisplay.src = `images/allstars-product-${imagesSelection[3]}.png`;
       
     }else{
-       mainImgDisplay[i].src = `images/allstars-product-${imagesSelection[3]}.png`;
-      smallImgDisplay.src = `images/allstars-product-${imagesSelection[3]}.png`;
+      mainImgDisplay[i].src = `images/image-product-${imagesSelection[3]}.jpg`;
+      smallImgDisplay.src = `images/image-product-${imagesSelection[3]}.jpg`;
 
     }
     // thumbNail1[i].classList.remove("shoe-active");
