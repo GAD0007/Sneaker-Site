@@ -287,6 +287,8 @@ btnWomenPageSmall.addEventListener("click",function name(params) {
   event.preventDefault();
   
   console.log('women clicked');
+  btnWomenPage.style.borderBottom = '2px solid white';
+    btnMenPage.style.borderBottom = '2px solid transparent';
     pageWomen.style.display = "block";
     // pageMen.classList.add('catalogue-switch')
     pageMen.style.display = "none";
@@ -328,6 +330,9 @@ btnWomenPage.addEventListener("click",function name(params) {
   event.preventDefault();
 
     console.log('women clicked');
+    btnWomenPage.style.borderBottom = '2px solid white';
+    btnMenPage.style.borderBottom = '2px solid transparent';
+
     pageWomen.style.display = "block";
     // pageMen.classList.add('catalogue-switch')
     pageMen.style.display = "none";
@@ -359,11 +364,14 @@ thumbNail4.forEach((element) => {
    
     
 })
+// btnMenPage.style.borderBottom = '2px solid white';
 
 btnMenPage.addEventListener("click",function name(params) {
   event.preventDefault();
 
     console.log('men clicked');
+    btnWomenPage.style.borderBottom = '2px solid transparent';
+    btnMenPage.style.borderBottom = '2px solid white';
     pageWomen.style.display = "none";
 
     // pageMen.classList.add('catalogue-switch')
@@ -438,6 +446,8 @@ btnMenPageSmall.addEventListener("click",function name(params) {
   event.preventDefault();
 
     console.log('men clicked');
+    btnWomenPage.style.borderBottom = '2px solid transparent';
+    btnMenPage.style.borderBottom = '2px solid white';
     pageWomen.style.display = "none";
 
     // pageMen.classList.add('catalogue-switch')
@@ -978,3 +988,11 @@ if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
 
     
   }
+  // window.addEventListener('beforeunload', function(event) {
+  //   // if (changesMade) {
+  //     // Display a warning message
+  //     const message = 'You have unsaved changes. Are you sure you want to leave?';
+  //     event.returnValue = message; // Standard for most browsers
+  //     return message; // For some older browsers
+  //   // }
+  // });

@@ -105,7 +105,16 @@ body{
     transition:0.5s ;
 
 }
-.nav-item2:hover,.nav-item3:hover,.nav-item4:hover,.nav-item5:hover{
+.nav-item2{
+    /* position: absolute; */
+    /* text-decoration: underline; */
+    border-bottom: 2px solid white;
+    /* background-color: red; */
+    padding-bottom: 10px;
+    transition:0.8s ;
+
+}
+.nav-item3:hover,.nav-item4:hover,.nav-item5:hover{
     /* position: absolute; */
     /* text-decoration: underline; */
     border-bottom: 2px solid white;
