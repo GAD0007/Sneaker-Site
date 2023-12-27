@@ -963,6 +963,11 @@ if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
     document.querySelector('.overlay-small-screen').style.display = "none" 
       
     })
+    document.addEventListener("scroll",function name(params) {
+      console.log('wide');
+    document.querySelector('.overlay-small-screen').style.display = "none" 
+      
+    })
 
     // document.querySelector(".nav-container").addEventListener("click",function name(params) {
     //   console.log('wide');

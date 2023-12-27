@@ -111,7 +111,7 @@ body{
     border-bottom: 2px solid white;
     /* background-color: red; */
     padding-bottom: 10px;
-    transition:0.5s ;
+    transition:0.8s ;
 
 }
 .nav-item4{
@@ -436,6 +436,11 @@ div.inner3 span {
 }
 .prev{
     margin-left: 20px;
+    width: 30px ;
+}
+.next-img,.prev-img{
+    /* margin-left: 20px; */
+    width: 30px ;
 }
 .next{
     margin-left: auto;
@@ -607,7 +612,7 @@ nav{
     top: 1.2rem;
     /* right: 0rem; */
     font-size: 5rem;
-    color: #333;
+    color: #f8f5f5;
     cursor: pointer;
     border: none;
     background: none;
