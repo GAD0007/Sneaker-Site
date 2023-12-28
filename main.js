@@ -55,12 +55,10 @@ const emptyCart = document.querySelector(".empty-cart");
 const loadedCart = document.querySelector('.cart-image-text')
 const loadedCartWomen = document.querySelector('.hidden-cart-selection-women')
 
-// emptyCart.classList.remove('empty-cart-hidden')
 cartBox.classList.add("hidden-cart");
 emptyCart.classList.remove('empty-cart-hidden')
 loadedCart.classList.add('hidden-cart-selection')
 
-// emptyCart.remove('empty-cart-hidden')
 
 
 // cart texts
@@ -75,9 +73,7 @@ const totalItemPrice = document.querySelector('.total-price')
 const totalItemPriceWomen = document.querySelector('.total-price-women')
 
 
-// 
-// document.querySelector('.catalogue2').classList.add('catalogue-switch')
-// btns for the nav bar
+
 const btnWomenPage = document.querySelector('.nav-item3')
 const btnWomenPageSmall = document.querySelector('.women-button')
 
@@ -91,12 +87,7 @@ const pageWomen = document.querySelector('.women-section')
 pageWomen.style.display = "none";
 
 
-// window.addEventListener("popstate",function () {
-  
 
-  //     console.log('clicked back');}
-  // )
-// pageWomen.style.display = "block";
 const Cancelbtn = document.querySelector(".cancel-btn");
 const nextBtn = document.querySelectorAll(".next")
 const prevBtn = document.querySelectorAll(".prev")
@@ -161,7 +152,6 @@ nextBtn[i].addEventListener("click", function () {
     
   }
   if (nextCount === 3) {
-    // nextCount = nextCount
     if (pageswitcher === 1) {
       mainImgDisplay[i].src = `images/allstars-product-${imagesSelection[3]}.png`;
       
@@ -283,6 +273,8 @@ prevBtn[i].addEventListener("click", function () {
   
 })
 
+// women link on small screens
+
 btnWomenPageSmall.addEventListener("click",function name(params) {
   event.preventDefault();
   
@@ -290,11 +282,9 @@ btnWomenPageSmall.addEventListener("click",function name(params) {
   btnWomenPage.style.borderBottom = '2px solid white';
     btnMenPage.style.borderBottom = '2px solid transparent';
     pageWomen.style.display = "block";
-    // pageMen.classList.add('catalogue-switch')
     pageMen.style.display = "none";
     nextCount = 0
     pageswitcher = 2
-    // images/allstars-product-${imagesSelection[2]}.png
     document.querySelector('.main-product-img2').src = 'images/allstars-product-1.png'
 
     thumb1Display.src=`images/allstars-product-1-thumbnail.png`
@@ -326,6 +316,8 @@ document.querySelector('.hidden-small-bar').style.display = "none"
     
 })
 
+// women link on big screens
+
 btnWomenPage.addEventListener("click",function name(params) {
   event.preventDefault();
 
@@ -334,7 +326,6 @@ btnWomenPage.addEventListener("click",function name(params) {
     btnMenPage.style.borderBottom = '2px solid transparent';
 
     pageWomen.style.display = "block";
-    // pageMen.classList.add('catalogue-switch')
     pageMen.style.display = "none";
     pageswitcher = 2
     thumb1Display.src=`images/allstars-product-1-thumbnail.png`
@@ -364,7 +355,7 @@ thumbNail4.forEach((element) => {
    
     
 })
-// btnMenPage.style.borderBottom = '2px solid white';
+
 
 btnMenPage.addEventListener("click",function name(params) {
   event.preventDefault();
@@ -374,7 +365,6 @@ btnMenPage.addEventListener("click",function name(params) {
     btnMenPage.style.borderBottom = '2px solid white';
     pageWomen.style.display = "none";
 
-    // pageMen.classList.add('catalogue-switch')
     pageMen.style.display = "block";
     pageswitcher = 1
     thumb1Display.src=`images/image-product-1-thumbnail.jpg`
@@ -406,42 +396,30 @@ btnMenPage.addEventListener("click",function name(params) {
    
     
 })
-// let navClick = 0
 let opened = false;
+
 const navbtn = document.querySelector(".nav-collapse");
 navbtn.addEventListener("click",function () {
-  // console.log('hmmmmddmdmdmdm');
-  // navClick++
-  // if (navClick === 1) {
     document.querySelector('.hidden-small-bar').style.display = "block" 
     clickCount = 0;
     cartBox.classList.add("hidden-cart");
     opened = true
     console.log(opened)
 
-  // }
 
 
 
   
 })
+
+// cancel button for small screens
 Cancelbtn.addEventListener("click",function () {
   document.querySelector('.overlay-small-screen').style.display = "none" 
   
 })
 
 
-//     if (window.innerWidth <= 650) {
-
-//       document.querySelector('.brand-logo').src = `images/icon-menu.svg`
-
-
-// } else if (window.innerWidth > 650) {
-
-//   document.querySelector('.brand-logo').src = `images/logo.svg`
-
-
-// }
+//  men page on small screen
 btnMenPageSmall.addEventListener("click",function name(params) {
   event.preventDefault();
 
@@ -450,7 +428,6 @@ btnMenPageSmall.addEventListener("click",function name(params) {
     btnMenPage.style.borderBottom = '2px solid white';
     pageWomen.style.display = "none";
 
-    // pageMen.classList.add('catalogue-switch')
     pageMen.style.display = "block";
     pageswitcher = 1
     nextCount = 0
@@ -492,7 +469,7 @@ document.querySelector('.hidden-small-bar').style.display = "none"
 itemCostOnCart.textContent = `$${shoePricesObj.shoePrice}`
 
 
-
+// cart button on nav
 cartBtn.addEventListener("click", function () {
     clickCount++;
 
@@ -514,11 +491,7 @@ const overlayOpen = function () {
 const imagesSelection = [1, 2, 3, 4];
 console.log(imagesSelection[3]);
 
-// document.querySelector('.hide-overlay').style.display = "block"
-// document.querySelector('.overlay').style.display = "block"
 
-//
-// product1-img
 
 for (let i = 0; i < mainImgDisplay.length; i++)
 
@@ -543,10 +516,7 @@ mainImgDisplay[i].addEventListener("click", function () {
 closeOverlay.addEventListener("click", function () {
   overlay.classList.add("hide-overlay");
   overlayDisplay.classList.add("hide-overlay");
-//   thumbNail1[i].classList.remove("shoe-active");
-//   thumbNail2[i].classList.remove("shoe-active");
-//   thumbNail3[i].classList.remove("shoe-active");
-//   thumbNail4[i].classList.remove("shoe-active");
+
 });
 
 // thumbnail buttons
@@ -554,13 +524,11 @@ closeOverlay.addEventListener("click", function () {
 for (let i = 0; i < thumbNail1.length; i++)
   thumbNail1[i].addEventListener("click", function name(params) {
     nextCount = 0
-    // closeOverlay.classList.remove('hide-overlay')
     
     console.log("hmmm");
     
       
       if (pageswitcher === 1) {
-        // overlayOpen();
         mainImgDisplay[i].src = `images/allstars-product-${imagesSelection[0]}.png`;
         smallImgDisplay.src = `images/allstars-product-${imagesSelection[0]}.png`;
         
@@ -568,15 +536,9 @@ for (let i = 0; i < thumbNail1.length; i++)
       } else if (pageswitcher === 2){
       mainImgDisplay[i].src = `images/image-product-${imagesSelection[0]}.jpg`;
       smallImgDisplay.src = `images/image-product-${imagesSelection[0]}.jpg`;
-      // overlayOpen();
       
     }
-    // mainImgDisplay.src = `images/image-product-${imagesSelection[0]}.jpg`;
-    // smallImgDisplay.src = `images/image-product-${imagesSelection[0]}.jpg`;
-    // thumbNail1[i].classList.add("shoe-active");
-    // thumbNail2[i].classList.remove("shoe-active");
-    // thumbNail3[i].classList.remove("shoe-active");
-    // thumbNail4[i].classList.remove("shoe-active");
+
     thumbNail1.forEach((element) => {
         element.classList.add("shoe-active");
         
@@ -614,10 +576,7 @@ for (let i = 0; i < thumbNail2.length; i++)
       mainImgDisplay[i].src = `images/image-product-${imagesSelection[1]}.jpg`;
       smallImgDisplay.src = `images/image-product-${imagesSelection[1]}.jpg`;
     }
-    // thumbNail1[i].classList.remove("shoe-active");
-    // thumbNail2[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i].classList.add("shoe-active");
-    // thumbNail3[i].classList.remove("shoe-active");
-    // thumbNail4[i].classList.remove("shoe-active");
+   
     thumbNail1.forEach((element) => {
         element.classList.remove("shoe-active");
         
@@ -654,10 +613,6 @@ for (let i = 0; i < thumbNail3.length; i++)
       smallImgDisplay.src = `images/image-product-${imagesSelection[2]}.jpg`;
 
     }
-    // thumbNail1[i].classList.remove("shoe-active");
-    // thumbNail2[i].classList.remove("shoe-active");
-    // thumbNail3[i].classList.add("shoe-active");
-    // thumbNail4[i].classList.remove("shoe-active");
     thumbNail1.forEach((element) => {
         element.classList.remove("shoe-active");
         
@@ -679,6 +634,7 @@ for (let i = 0; i < thumbNail3.length; i++)
       
     }
   });
+
 // thumbnail button 4
 for (let i = 0; i < thumbNail4.length; i++)
   thumbNail4[i].addEventListener("click", function name(params) {
@@ -693,9 +649,6 @@ for (let i = 0; i < thumbNail4.length; i++)
       smallImgDisplay.src = `images/image-product-${imagesSelection[3]}.jpg`;
 
     }
-    // thumbNail1[i].classList.remove("shoe-active");
-    // thumbNail2[i].classList.remove("shoe-active");
-    // thumbNail3[i].classList.remove("shoe-active");
     thumbNail1.forEach((element) => {
         element.classList.remove("shoe-active");
         
@@ -728,13 +681,18 @@ for (let i = 0; i < thumbNail4.length; i++)
    if (clickCount1 > 1) {
     clickCount1--
     counter.textContent = clickCount1
-    // smallCounterCart.textContent = clickCount1
 
     counterOnCart.textContent = clickCount1
-totalItemPrice.textContent = `$${shoePricesObj.shoePriceAllstar * clickCount2}`
+totalItemPrice.textContent = `$${shoePricesObj.shoePrice* clickCount1}`
 
-if (counterSeizeMen === 1) {
+
+  
+if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
   smallCounterCart.textContent = clickCount1 + clickCount2
+
+  
+}else if (counterSeizeWomen2 === 0 & counterSeizeMen2 === 1) {
+  smallCounterCart.textContent = clickCount1
 
   
 }
@@ -745,34 +703,34 @@ if (counterSeizeMen === 1) {
     clickCount1 = 0
     counter.textContent = clickCount1
     counterOnCart.textContent = clickCount1
-    // smallCounterCart.classList.add('hidden-small-counter')
 
    if (clickCount1 === 0 && clickCount2 === 0) {
     emptyCart.classList.remove('empty-cart-hidden')
     
+    
+   }
+   if (counterSeizeMen2 === 1) {
+    counterSeizeMen = 0
+
+     smallCounterCart.textContent = clickCount1 + clickCount2
+   
+     
    }
    
-    if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
-      smallCounterCart.textContent = clickCount1 + clickCount2
-    
-      
-    }else if (counterSeizeWomen2 === 0 & counterSeizeMen2 === 1) {
-      smallCounterCart.textContent = clickCount1
-    
-      
-    }
+     
+   
     loadedCart.classList.add('hidden-cart-selection')
     checkOut.style.display = "none"
 
    
+    counterSeizeMen2 = 0
    }
-   counterSeizeMen2 = 0
 
     
   })
   const PlusBtn = document.getElementById('plus-btn')
   PlusBtn.addEventListener('click',function () {
-      console.log('plus');
+      console.log('plus ');
       if (clickCount1 < 10) {
         clickCount1++
        console.log(clickCount1);
@@ -800,19 +758,15 @@ if (counterSeizeMen === 1) {
   })
 
 // button for women pages, plus and minus
-
-
-
   const minusBtnWomen = document.getElementById('minus-btn-women')
   minusBtnWomen.addEventListener('click',function () {
     console.log('minus');
    if (clickCount2 > 1) {
     clickCount2--
     counterWomen.textContent = clickCount2
-    // smallCounterCart.textContent = clickCount1
 
     counterOnCartWomen.textContent = clickCount2
-totalItemPriceWomen.textContent = `$${shoePricesObj.shoePrice * clickCount1}`
+totalItemPriceWomen.textContent = `$${shoePricesObj.shoePriceAllstar * clickCount2}`
 
 if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
   smallCounterCart.textContent = clickCount1 + clickCount2
@@ -830,7 +784,6 @@ if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
     clickCount2 = 0
     counterWomen.textContent = clickCount2
     counterOnCartWomen.textContent = clickCount2
-    // emptyCart.classList.remove('empty-cart-hidden')
     if (clickCount1 === 0 && clickCount2 === 0) {
       emptyCart.classList.remove('empty-cart-hidden')
       
@@ -842,10 +795,7 @@ if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
       smallCounterCart.textContent = clickCount1 + clickCount2
       
     }
-    // smallCounterCart.classList.add('hidden-small-counter')
 
-    // emptyCart.classList.remove('empty-cart-hidden')
-    // loadedCartWomen.classList.add('hidden-cart-selection')
     loadedCartWomen.style.display = "none"
     checkOut.style.display = "none"
 
@@ -858,12 +808,11 @@ if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
   })
   const PlusBtnWomen = document.getElementById('plus-btn-women')
   PlusBtnWomen.addEventListener('click',function () {
-      console.log('plus');
+      console.log('plus women');
       if (clickCount2 < 10) {
         clickCount2++
        console.log(clickCount2);
     counterWomen.textContent = clickCount2
-    // smallCounterCart.textContent = clickCount1
 
     counterOnCartWomen.textContent = clickCount2
 totalItemPriceWomen.textContent = `$${shoePricesObj.shoePriceAllstar * clickCount2}`
@@ -887,7 +836,6 @@ if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
   
   // add to cart btns for women and men pages
   addToCartBtn.addEventListener('click',function () {
-    // clickCount = 1
     counterSeizeMen = 1
     counterSeizeMen2 = 1
 
@@ -895,7 +843,6 @@ if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
     if (clickCount1 < 1) {
         console.log('emptymen');
         cartBox.classList.remove("hidden-cart");
-        // emptyCart.classList.remove('empty-cart-hidden')
         loadedCart.classList.add('hidden-cart-selection')
         
     } else {
@@ -925,7 +872,6 @@ if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
   })
   addToCartBtnWomen.addEventListener('click',function () {
 
-    // clickCount2 = 1
     counterSeizeWomen = 1
     counterSeizeWomen2 = 1
 
@@ -934,19 +880,14 @@ if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
     if (clickCount2 < 1) {
         console.log('emptyWomen');
         cartBox.classList.remove("hidden-cart");
-        // emptyCart.classList.remove('empty-cart-hidden')
-        // loadedCartWomen.classList.add('hidden-cart-selection-women')
         
     } else {
         console.log('loadedwomen');
     clickCount = 1;
 
-        // smallCounterCart.textContent = clickCount2
-        // smallCounterCart.classList.remove('hidden-small-counter')
 
         cartBox.classList.remove("hidden-cart");
         emptyCart.classList.add('empty-cart-hidden')
-        // loadedCartWomen.classList.remove('hidden-cart-selection-women')
         loadedCartWomen.style.display = "flex"
         checkOut.style.display = "flex"
 
@@ -958,7 +899,6 @@ if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
           smallCounterCart.textContent = clickCount2
           
         }
-        // smallCounterCart.textContent = clickCount1 + clickCount2
         smallCounterCart.classList.remove('hidden-small-counter')
 
 
@@ -974,25 +914,8 @@ if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
       
     })
     document.addEventListener("scroll",function name(params) {
-      console.log('wide');
     document.querySelector('.overlay-small-screen').style.display = "none" 
       
-    })
+    })}
 
-    // document.querySelector(".nav-container").addEventListener("click",function name(params) {
-    //   console.log('wide');
-    // document.querySelector('.overlay-small-screen').style.display = "none" 
-      
-    // })
-
-
-    
-  }
-  // window.addEventListener('beforeunload', function(event) {
-  //   // if (changesMade) {
-  //     // Display a warning message
-  //     const message = 'You have unsaved changes. Are you sure you want to leave?';
-  //     event.returnValue = message; // Standard for most browsers
-  //     return message; // For some older browsers
-  //   // }
-  // });
+   

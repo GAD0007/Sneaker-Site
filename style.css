@@ -260,6 +260,7 @@ div.inner3 span {
 .thumbnail-image{
     height: 40px;
     width: 50px;
+    background-color: violet;
 }
 .nav-item7{
     position: absolute;
