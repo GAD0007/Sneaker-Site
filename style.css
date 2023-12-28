@@ -65,6 +65,7 @@ body{
 }
 .inner44{
     display: flex;
+    margin-top: 10px;
 }
 .checkout{
     margin-left: auto;

@@ -707,6 +707,7 @@ if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
    if (clickCount1 === 0 && clickCount2 === 0) {
     emptyCart.classList.remove('empty-cart-hidden')
     
+    checkOut.style.display = "none"
     
    }
    if (counterSeizeMen2 === 1) {
@@ -720,7 +721,6 @@ if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
      
    
     loadedCart.classList.add('hidden-cart-selection')
-    checkOut.style.display = "none"
 
    
     counterSeizeMen2 = 0
@@ -787,6 +787,7 @@ if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
     if (clickCount1 === 0 && clickCount2 === 0) {
       emptyCart.classList.remove('empty-cart-hidden')
       
+      checkOut.style.display = "none"
      }
 
     if (counterSeizeWomen === 1) {
@@ -797,7 +798,6 @@ if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
     }
 
     loadedCartWomen.style.display = "none"
-    checkOut.style.display = "none"
 
    counterSeizeWomen2 = 0
 
