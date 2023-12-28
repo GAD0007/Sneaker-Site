@@ -54,6 +54,7 @@ const addToCartBtnWomen = document.getElementById("addcart-btn-women");
 const emptyCart = document.querySelector(".empty-cart");
 const loadedCart = document.querySelector('.cart-image-text')
 const loadedCartWomen = document.querySelector('.hidden-cart-selection-women')
+const deleteCart = document.querySelector('.empty-cart-button') 
 
 cartBox.classList.add("hidden-cart");
 emptyCart.classList.remove('empty-cart-hidden')
@@ -906,6 +907,29 @@ if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
         
     }
 
+  })
+  deleteCart.addEventListener("click",function () {
+    clickCount1 = 0
+    clickCount2 = 0
+  smallCounterCart.textContent = 0
+  loadedCart.classList.add('hidden-cart-selection')
+  emptyCart.classList.remove('empty-cart-hidden')
+
+  loadedCartWomen.style.display = "none"
+  checkOut.style.display = "none"
+  counter.textContent = 0
+  counterWomen.textContent = 0
+  counterSeizeMen2 = 0
+  counterSeizeWomen2 = 0
+
+
+
+
+
+
+
+
+    
   })
   if (opened = true) {
   document.querySelector(".body2").addEventListener("click",function name(params) {
