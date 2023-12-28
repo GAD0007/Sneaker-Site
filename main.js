@@ -933,7 +933,6 @@ if (counterSeizeWomen2 === 1 & counterSeizeMen2 === 1) {
   })
   if (opened = true) {
   document.querySelector(".body2").addEventListener("click",function name(params) {
-      console.log('wide');
     document.querySelector('.overlay-small-screen').style.display = "none" 
       
     })
