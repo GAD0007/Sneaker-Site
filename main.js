@@ -38,6 +38,11 @@ const thumb2Display = document.querySelector(".thumb2");
 const thumb3Display = document.querySelector(".thumb3");
 const thumb4Display = document.querySelector(".thumb4");
 
+thumb1Display.src=`images/allstars-product-1-thumbnail.png`
+    thumb2Display.src=`images/allstars-product-2-thumbnail.png`
+    thumb3Display.src=`images/allstars-product-3-thumbnail.png`
+    thumb4Display.src=`images/allstars-product-4-thumbnail.png`
+
 
 
 // overlay
@@ -286,12 +291,13 @@ btnWomenPageSmall.addEventListener("click",function name(params) {
     pageMen.style.display = "none";
     nextCount = 0
     pageswitcher = 2
-    document.querySelector('.main-product-img2').src = 'images/allstars-product-1.png'
+    document.querySelector('.main-product-img2').src = 'images/image-product-1.jpg'
+    thumb1Display.src=`images/image-product-1-thumbnail.jpg`
+    thumb2Display.src=`images/image-product-2-thumbnail.jpg`
+    thumb3Display.src=`images/image-product-3-thumbnail.jpg`
+    thumb4Display.src=`images/image-product-4-thumbnail.jpg`
 
-    thumb1Display.src=`images/allstars-product-1-thumbnail.png`
-thumb2Display.src=`images/allstars-product-2-thumbnail.png`
-thumb3Display.src=`images/allstars-product-3-thumbnail.png`
-thumb4Display.src=`images/allstars-product-4-thumbnail.png`
+   
 thumbNail1.forEach((element) => {
   element.classList.add("shoe-active");
   
@@ -329,10 +335,11 @@ btnWomenPage.addEventListener("click",function name(params) {
     pageWomen.style.display = "block";
     pageMen.style.display = "none";
     pageswitcher = 2
-    thumb1Display.src=`images/allstars-product-1-thumbnail.png`
-thumb2Display.src=`images/allstars-product-2-thumbnail.png`
-thumb3Display.src=`images/allstars-product-3-thumbnail.png`
-thumb4Display.src=`images/allstars-product-4-thumbnail.png`
+    thumb1Display.src=`images/image-product-1-thumbnail.jpg`
+    thumb2Display.src=`images/image-product-2-thumbnail.jpg`
+    thumb3Display.src=`images/image-product-3-thumbnail.jpg`
+    thumb4Display.src=`images/image-product-4-thumbnail.jpg`
+   
 thumbNail1.forEach((element) => {
   element.classList.remove("shoe-active");
   
@@ -368,10 +375,11 @@ btnMenPage.addEventListener("click",function name(params) {
 
     pageMen.style.display = "block";
     pageswitcher = 1
-    thumb1Display.src=`images/image-product-1-thumbnail.jpg`
-    thumb2Display.src=`images/image-product-2-thumbnail.jpg`
-    thumb3Display.src=`images/image-product-3-thumbnail.jpg`
-    thumb4Display.src=`images/image-product-4-thumbnail.jpg`
+    thumb1Display.src=`images/allstars-product-1-thumbnail.png`
+    thumb2Display.src=`images/allstars-product-2-thumbnail.png`
+    thumb3Display.src=`images/allstars-product-3-thumbnail.png`
+    thumb4Display.src=`images/allstars-product-4-thumbnail.png`
+    
     thumbNail1.forEach((element) => {
       element.classList.remove("shoe-active");
       
@@ -433,10 +441,11 @@ btnMenPageSmall.addEventListener("click",function name(params) {
     pageswitcher = 1
     nextCount = 0
     document.querySelector('.main-product-img').src = 'images/image-product-1.jpg'
-    thumb1Display.src=`images/image-product-1-thumbnail.jpg`
-    thumb2Display.src=`images/image-product-2-thumbnail.jpg`
-    thumb3Display.src=`images/image-product-3-thumbnail.jpg`
-    thumb4Display.src=`images/image-product-4-thumbnail.jpg`
+ 
+    thumb1Display.src=`images/allstars-product-1-thumbnail.png`
+    thumb2Display.src=`images/allstars-product-2-thumbnail.png`
+    thumb3Display.src=`images/allstars-product-3-thumbnail.png`
+    thumb4Display.src=`images/allstars-product-4-thumbnail.png`
     thumbNail1.forEach((element) => {
       element.classList.add("shoe-active");
       
@@ -499,14 +508,14 @@ for (let i = 0; i < mainImgDisplay.length; i++)
 mainImgDisplay[i].addEventListener("click", function () {
   if (window.innerWidth > 650) {
     if (pageswitcher === 1) {
-      mainImgDisplay[i].src = `images/image-product-${imagesSelection[0]}.jpg`;
-    smallImgDisplay.src = `images/image-product-${imagesSelection[0]}.jpg`;
-    overlayOpen();
-
-    
-  } else if (pageswitcher === 2){
-    mainImgDisplay[i].src = `images/allstars-product-${imagesSelection[0]}.png`;
-    smallImgDisplay.src = `images/allstars-product-${imagesSelection[0]}.png`;
+      overlayOpen();
+      mainImgDisplay[i].src = `images/allstars-product-${imagesSelection[0]}.png`;
+      smallImgDisplay.src = `images/allstars-product-${imagesSelection[0]}.png`;
+      
+      
+    } else if (pageswitcher === 2){
+    mainImgDisplay[i].src = `images/image-product-${imagesSelection[0]}.jpg`;
+  smallImgDisplay.src = `images/image-product-${imagesSelection[0]}.jpg`;
     overlayOpen();
     
   }
